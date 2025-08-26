@@ -29,7 +29,7 @@ app.use(helmet())
 
 // ✅ Allow requests from Angular frontend (http://localhost:4200)
 app.use(cors({
-  origin: "http://localhost:4200",   // Allow Angular dev server
+  origin: "*",   // Allow Angular dev server
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
