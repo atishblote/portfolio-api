@@ -21,7 +21,8 @@ exports.getSkills = async (req , res)=>{
 
 exports.getProjects = async (req , res)=>{
   try {
-    const projects = await Projects.find();
+    const limit = parseInt(req.query.limit) || 3; // default 10 if not provided
+    const projects = await Projects.find().limit(limit);
     res.status(200).json({
       code: 1,
       projects,
